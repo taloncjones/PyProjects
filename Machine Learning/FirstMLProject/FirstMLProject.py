@@ -30,7 +30,7 @@ from sklearn.externals import joblib
 dataset_url = 'http://mlr.cs.umass.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv'
 data = pd.read_csv(dataset_url, sep=';')
 
-# Show section of data table, number of rows/columns, and statistics for data
+# # Show section of data table, number of rows/columns, and statistics for data
 # print(data.head())
 # print(data.shape)
 # print(data.describe())
@@ -45,3 +45,15 @@ x = data.drop('quality', axis=1)
 ## are larger/smaller this will prevent weighing the sample with data from the larger subclasses.
 ## https://en.wikipedia.org/wiki/Stratified_sampling
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=123, stratify=y)
+
+# Fit transformer (standardizes the data to find mean, standard deviation) on the training set
+scaler = preprocessing.StandardScaler().fit(x_train)
+# # Confirm it worked with:
+# x_train_scaled = scaler.transform(x_train)
+# print(x_train_scaled.mean(axis=0))
+# print(x_train_scaled.std(axis=0))
+# # Confirm it works with the x_test set
+# x_test_scaled = scaler.transform(x_test)
+# print(x_test_scaled.mean(axis=0))
+# print(x_test_scaled.std(axis=0))
+
