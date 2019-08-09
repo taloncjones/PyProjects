@@ -62,6 +62,7 @@ scaler = preprocessing.StandardScaler().fit(x_train)
 # # to training the model. Hyperparameter optimization attempts to find a tuple of hyperparameters that yields the
 # # optimal model while minimizing data loss through overtuning.
 # # https://en.wikipedia.org/wiki/Hyperparameter_optimization
+# # More on optimization here: https://towardsdatascience.com/hyperparameter-tuning-c5619e7e6624
 hyperparameters = { 'randomforestregressor__max_features' : ['auto', 'sqrt', 'log2'],
                     'randomforestregressor__max_depth' : [None, 5, 3, 1]}
 
