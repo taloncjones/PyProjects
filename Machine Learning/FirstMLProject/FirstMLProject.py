@@ -25,3 +25,12 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Persist model for the future
 from sklearn.externals import joblib
+
+# Load tutorial dataset
+dataset_url = 'http://mlr.cs.umass.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv'
+data = pd.read_csv(dataset_url, sep=';')
+
+# Show section of data table, number of rows/columns, and statistics for data
+print(data.head())
+print(data.shape)
+print(data.describe())
