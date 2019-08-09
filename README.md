@@ -10,3 +10,5 @@ Contains a variety of finance related projects.
 
 ## Machine Learning
 Contains a variety of machine learning projects.
+
+[FirstMLProject](Machine%20Learning/FirstMLProject) - Predicts the quality score of various red wines given different metrics (e.g. acidity, alcohol content). Follows the machine learning tutorial found [here](https://elitedatascience.com/python-machine-learning-tutorial-scikit-learn).
