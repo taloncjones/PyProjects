@@ -31,6 +31,17 @@ dataset_url = 'http://mlr.cs.umass.edu/ml/machine-learning-databases/wine-qualit
 data = pd.read_csv(dataset_url, sep=';')
 
 # Show section of data table, number of rows/columns, and statistics for data
-print(data.head())
-print(data.shape)
-print(data.describe())
+# print(data.head())
+# print(data.shape)
+# print(data.describe())
+
+# Split data into target (y) and training (x) inputs
+y = data.quality
+x = data.drop('quality', axis=1)
+
+# Further split inputs into training (80%) and test (20%) sets, a random state seed, and stratifies based on y
+## Stratified sampling aims to diversify the training sample by pulling from each subclass equally. In cases where
+## subclass sizes are about equal this is roughly the same as random sampling, but in cases where some subclass sizes
+## are larger/smaller this will prevent weighing the sample with data from the larger subclasses.
+## https://en.wikipedia.org/wiki/Stratified_sampling
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=123, stratify=y)
