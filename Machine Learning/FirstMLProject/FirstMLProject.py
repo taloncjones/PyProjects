@@ -40,10 +40,10 @@ y = data.quality
 x = data.drop('quality', axis=1)
 
 # Further split inputs into training (80%) and test (20%) sets, a random state seed, and stratifies based on y
-## Stratified sampling aims to diversify the training sample by pulling from each subclass equally. In cases where
-## subclass sizes are about equal this is roughly the same as random sampling, but in cases where some subclass sizes
-## are larger/smaller this will prevent weighing the sample with data from the larger subclasses.
-## https://en.wikipedia.org/wiki/Stratified_sampling
+# # Stratified sampling aims to diversify the training sample by pulling from each subclass equally. In cases where
+# # subclass sizes are about equal this is roughly the same as random sampling, but in cases where some subclass sizes
+# # are larger/smaller this will prevent weighing the sample with data from the larger subclasses.
+# # https://en.wikipedia.org/wiki/Stratified_sampling
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=123, stratify=y)
 
 # Fit transformer (standardizes the data to find mean, standard deviation) on the training set
@@ -56,4 +56,12 @@ scaler = preprocessing.StandardScaler().fit(x_train)
 # x_test_scaled = scaler.transform(x_test)
 # print(x_test_scaled.mean(axis=0))
 # print(x_test_scaled.std(axis=0))
+
+# Declare hyperparameters for tuning
+# # Unlike model parameters, which are learned from the dataset, hyperparameters declare structural information prior
+# # to training the model. Hyperparameter optimization attempts to find a tuple of hyperparameters that yields the
+# # optimal model while minimizing data loss through overtuning.
+# # https://en.wikipedia.org/wiki/Hyperparameter_optimization
+hyperparameters = { 'randomforestregressor__max_features' : ['auto', 'sqrt', 'log2'],
+                    'randomforestregressor__max_depth' : [None, 5, 3, 1]}
 
