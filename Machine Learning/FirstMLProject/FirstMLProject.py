@@ -80,5 +80,7 @@ hyperparameters = { 'randomforestregressor__max_features' : ['auto', 'sqrt', 'lo
 clf = GridSearchCV(pipeline, hyperparameters, cv=10)
 # Fit and tune model
 clf.fit(x_train, y_train)
-# Print best parameters found using CV
-print (clf.best_params_)
+# # Print best parameters found using CV
+# print(clf.best_params_)
+# # Confirm that GridSearchCV automatically refit our model with the best hyperparameters for the entire training set
+# print(clf.refit)
