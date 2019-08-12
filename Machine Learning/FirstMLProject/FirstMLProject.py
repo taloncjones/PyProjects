@@ -66,3 +66,11 @@ scaler = preprocessing.StandardScaler().fit(x_train)
 hyperparameters = { 'randomforestregressor__max_features' : ['auto', 'sqrt', 'log2'],
                     'randomforestregressor__max_depth' : [None, 5, 3, 1]}
 
+# Perform cross-validation across x_train and y_train
+# # Cross-validation estimates the performance of a method for building a model by repeatedly training and evaluating
+# # the model using the same method. K-Fold cross-validation splits the data into K parts, trains the model on K-1
+# # folds, and then evaluates the model on the Kth fold. By repeating this process K times (using a new "hold-out" (Kth)
+# # fold each time) and aggregating the performance of each model, the performance metric for that method is attained.
+clf = GridSearchCV(pipeline, hyperparameters, cv=10)
+# Fit and tune model
+clf.fit(x_train, y_train)
