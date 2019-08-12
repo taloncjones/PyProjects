@@ -46,8 +46,9 @@ x = data.drop('quality', axis=1)
 # # https://en.wikipedia.org/wiki/Stratified_sampling
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=123, stratify=y)
 
-# Fit transformer (standardizes the data to find mean, standard deviation) on the training set
-scaler = preprocessing.StandardScaler().fit(x_train)
+### Manual preprocessing
+# # Fit transformer (standardizes the data to find mean, standard deviation) on the training set
+# scaler = preprocessing.StandardScaler().fit(x_train)
 # # Confirm it worked with:
 # x_train_scaled = scaler.transform(x_train)
 # print(x_train_scaled.mean(axis=0))
@@ -56,6 +57,10 @@ scaler = preprocessing.StandardScaler().fit(x_train)
 # x_test_scaled = scaler.transform(x_test)
 # print(x_test_scaled.mean(axis=0))
 # print(x_test_scaled.std(axis=0))
+
+### Automated preprocessing and scaling
+# Pipeline with preprocessing and model. This replaces the above section when doing cross-validation.
+pipeline = make_pipeline(preprocessing.StandardScaler(), RandomForestRegressor(n_estimators=100))
 
 # Declare hyperparameters for tuning
 # # Unlike model parameters, which are learned from the dataset, hyperparameters declare structural information prior
