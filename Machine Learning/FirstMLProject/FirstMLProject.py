@@ -84,3 +84,10 @@ clf.fit(x_train, y_train)
 # print(clf.best_params_)
 # # Confirm that GridSearchCV automatically refit our model with the best hyperparameters for the entire training set
 # print(clf.refit)
+
+# Predict a new set of data
+y_predict = clf.predict(x_test)
+
+# Evaluate model performance
+print(r2_score(y_test, y_predict))
+print(mean_squared_error(y_test, y_predict))
