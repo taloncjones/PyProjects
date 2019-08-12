@@ -88,6 +88,14 @@ clf.fit(x_train, y_train)
 # Predict a new set of data
 y_predict = clf.predict(x_test)
 
-# Evaluate model performance
-print(r2_score(y_test, y_predict))
-print(mean_squared_error(y_test, y_predict))
+# # Evaluate model performance
+# print(r2_score(y_test, y_predict))
+# print(mean_squared_error(y_test, y_predict))
+
+# Save model to a .pkl file
+joblib.dump(clf, 'rf_regressor.pkl')
+
+# # To load model, use:
+# clf2 = joblib.load('rf_regressor.pkl')
+# # To use loaded model to predict data set:
+# y_predict = clf2.predict(x_test)
