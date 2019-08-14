@@ -1,4 +1,4 @@
-# File: CodeSnippets.py
+# File: FirstMLProject.py
 # Use: The goal of this project is to begin learning ML and is taken from a tutorial found in the README
 # Author: Talon Jones
 
