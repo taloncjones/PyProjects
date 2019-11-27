@@ -1,3 +1,6 @@
 [submodule "TTV_Notifications"]
 	path = TTV_Notifications
 	url = https://github.com/taloncjones/TTV_Notifications.git
+[submodule "Tools"]
+	path = Tools
+	url = ./Tools
