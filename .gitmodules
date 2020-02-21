@@ -3,4 +3,4 @@
 	url = https://github.com/taloncjones/TTV_Notifications.git
 [submodule "Tools"]
 	path = Tools
-	url = ./Tools
+	url = https://github.com/taloncjones/Tools.git
