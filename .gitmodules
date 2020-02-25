@@ -7,3 +7,6 @@
 [submodule "AutomateTheBoringStuff"]
 	path = AutomateTheBoringStuff
 	url = https://github.com/taloncjones/AutomateTheBoringStuff.git
+[submodule "EAAccountCreator"]
+	path = EAAccountCreator
+	url = https://github.com/taloncjones/EAAccountCreator.git
