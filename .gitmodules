@@ -1,5 +1,5 @@
 [submodule "TTV_Notifications"]
-	path = TTV_Notifications
+	path = Mini_TTV
 	url = https://github.com/taloncjones/TTV_Notifications.git
 [submodule "Tools"]
 	path = Tools
